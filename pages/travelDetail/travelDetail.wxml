@@ -1,0 +1,16 @@
+<!--pages/travelDetail/travelDetail.wxml-->
+<view class="container">
+  <view class="head">
+    <view class="head-left">{{ detail.author }}</view>
+    <view class="head-right">
+      <text>{{ detail.announceTime }}</text>
+      <text>发布</text>
+    </view>
+  </view>
+  <view class="list">
+    <view wx:for="{{ detail.list }}" wx:key="index" wx:for-item="item" class="item">
+      <view class="item-content">{{ item.content }}</view>
+      <image src="{{ item.image }}" class="item-image"></image>
+    </view>
+  </view>
+</view>

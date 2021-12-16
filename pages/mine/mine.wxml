@@ -1,0 +1,34 @@
+<!--pages/mine/mine.wxml-->
+<view class="container">
+  <view class="box">
+    <view class="mine-header" open-type="getUserInfo" bindtap="getUserProfile">
+      <view class="mine-header-img">
+        <image src="{{ userInfo.avatarUrl }}"></image>
+      </view>
+      <view class="mine-header-name">
+        <text class="mine-header-nickname">{{ userInfo.nickName }}</text>
+        <image class="mine-header-edit" src="../../images/mine/edit.png"></image>
+      </view>
+    </view>
+    <view class="mine-content">
+      <view class="mine-content-item" bindtap="gotoTravel">
+        <view class="content-item-label">
+          <text>我的游记</text>
+          <text class="ml5">({{ travelList.length }}篇)</text>
+        </view>
+        <view class="arrow-icon">
+          <image src="../../images/icon/icon-arrow.png"></image>
+        </view>
+      </view>
+      <view class="mine-content-item" bindtap="phoneCall">
+        <text class="content-item-label">联系客服（待开发）</text>
+        <view class="arrow-icon">
+          <image src="../../images/icon/icon-arrow.png"></image>
+        </view>
+      </view>
+      <view class="mine-content-btn">
+        <button class="btn-gray" bindtap="loginOut">退出登录</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "",
+          "pathName": "pages/home/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "home",
+          "pathName": "pages/home/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "travelDetail",
+          "pathName": "pages/travelDetail/travelDetail",
+          "query": "id=3",
+          "scene": null
+        },
+        {
+          "name": "cityDetail",
+          "pathName": "pages/cityDetail/cityDetail",
+          "query": "id=4",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

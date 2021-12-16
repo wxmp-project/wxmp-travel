@@ -1,0 +1,65 @@
+/* pages/travelList/travelList.wxss */
+.container {
+  margin-bottom: 96rpx;
+}
+.list {
+  margin-bottom: 30rpx;
+  padding: 32rpx;
+}
+.item {
+  height: 280rpx;
+  position: relative;
+  border-radius: 8rpx;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+  color: #fff;
+}
+.item .item-bg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-radius: 8rpx;
+}
+.item-box {
+  width: 100%;
+  height: 280rpx;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+.item-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  line-height: 1.22;
+  text-shadow: 4rpx 4rpx rgba(0, 0, 0, 0.4);
+  margin-top: 40rpx;
+  padding-left: 38rpx;
+  padding-bottom: 10rpx;
+}
+.item-slogan {
+  padding-left: 46rpx;
+  font-size: 24rpx;
+  height: 60rpx;
+  position: relative;
+}
+.item-slogan text {
+  display: block;
+}
+.item-slogan::before {
+  content: '';
+  width: 5rpx;
+  height: 90%;
+  border-right: 2rpx;
+  background-color: #0a73f5;
+  position: absolute;
+  left: 32rpx;
+  top: 8rpx;
+  border-right-width: 2rpx;
+}

@@ -1,0 +1,15 @@
+<!--pages/travelList/travelList.wxml-->
+<view class="container">
+  <view class="list">
+    <view wx:for="{{ list }}" wx:key="travelIndex" wx:for-item="travelItem" class="item" bindtap="goto" data-id="{{ travelItem.id }}">
+      <view class="item-box">
+        <view class="item-title">{{ travelItem.title }}</view>
+        <view class="item-slogan">
+          <text>{{ travelItem.text1 }}</text>
+          <text>{{ travelItem.text2 }}</text>
+        </view>
+      </view>
+      <image src="{{ travelItem.bg }}" class="item-bg"></image>
+    </view>
+  </view>
+</view>

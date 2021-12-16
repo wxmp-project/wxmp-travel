@@ -1,0 +1,17 @@
+<!--pages/cityDetail/cityDetail.wxml-->
+<view class="container">
+  <view class="banner">
+    <view class="banner-box">
+      <view class="head">
+        <view class="head-left">{{ detail.describe }}</view>
+        <view class="head-right">{{ detail.source }}</view>
+      </view>
+      <image src="{{ detail.banner }}"></image>
+    </view>
+  </view>
+  <view class="list">
+    <view wx:for="{{ detail.list }}" wx:key="index" wx:for-item="item" class="item">
+      <view class="item-content">{{ item.content }}</view>
+    </view>
+  </view>
+</view>

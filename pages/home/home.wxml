@@ -1,0 +1,48 @@
+<!--pages/home/home.wxml-->
+<view class="container">
+  <view class="list">
+    <view class="list-title">{{ travel.title }}</view>
+    <view wx:for="{{ travel.list }}" wx:key="travelIndex" wx:for-item="travelItem" class="item" bindtap="gotoTravel" data-id="{{ travelItem.id }}">
+      <view class="item-box">
+        <view class="item-title">{{ travelItem.title }}</view>
+        <view class="item-slogan">
+          <text>{{ travelItem.text1 }}</text>
+          <text>{{ travelItem.text2 }}</text>
+        </view>
+      </view>
+      <image src="{{ travelItem.bg }}" class="item-bg"></image>
+    </view>
+  </view>
+  <view class="list-two">
+    <view class="list-title">{{ city.title }}</view>
+    <view class="item-two-wrap clearfix">
+      <view wx:for="{{ city.list }}" wx:key="cityIndex" wx:for-item="cityItem" class="item item-two" bindtap="gotoCity" data-id="{{ cityItem.id }}">
+        <view class="item-box">
+          <view class="item-head">
+            <view class="item-title">
+              <image class="item-position" src="../../images/icon/position.png"></image>
+              <text>{{ cityItem.title }}</text>
+            </view>
+            <image src="{{ cityItem.bg }}" class="item-bg"></image>
+          </view>
+          <view class="item-slogan">
+            <text>{{ cityItem.text1 }}</text>
+            <text>{{ cityItem.text2 }}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部轮播 -->
+  <view wx:if="{{ activityList.length > 0 }}" class="bottom-activity">
+    <view class="bottom-activity-box">
+      <swiper class="bottom-swiper" indicator-dots="{{ false }}" autoplay="{{ true }}" interval="4000" duration="500" circular="true">
+        <block wx:for="{{ activityList }}" wx:for-item="activity" wx:key="unique">
+          <swiper-item class="swiper-items">
+            <view class="activity-text" bindtap="activityTap">{{ activity.name }}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</view>
