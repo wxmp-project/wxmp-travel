@@ -3,11 +3,10 @@
   margin-bottom: 96rpx;
 }
 .list {
-  margin-bottom: 30rpx;
-  padding: 32rpx;
+  padding: 32rpx 32rpx 0;
 }
 .list-two {
-  padding: 32rpx 32rpx 0;
+  padding: 10rpx 32rpx 0;
 }
 .list-title {
   text-align: left;
