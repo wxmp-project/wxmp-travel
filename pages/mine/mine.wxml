@@ -1,7 +1,7 @@
 <!--pages/mine/mine.wxml-->
 <view class="container">
   <view class="box">
-    <view class="mine-header" open-type="getUserInfo" bindtap="getUserProfile">
+    <view class="mine-header" bindtap="getUserProfile">
       <view class="mine-header-img">
         <image src="{{ userInfo.avatarUrl }}"></image>
       </view>
@@ -20,6 +20,12 @@
           <image src="../../images/icon/icon-arrow.png"></image>
         </view>
       </view>
+      <view class="mine-content-item" bindtap="remarkShow">
+        <view class="content-item-label">个人成就</view>
+        <view class="arrow-icon">
+          <image src="../../images/icon/icon-arrow.png"></image>
+        </view>
+      </view>
       <view class="mine-content-item" bindtap="phoneCall">
         <text class="content-item-label">联系客服（待开发）</text>
         <view class="arrow-icon">
@@ -28,6 +34,26 @@
       </view>
       <view class="mine-content-btn">
         <button class="btn-gray" bindtap="loginOut">退出登录</button>
+        <!-- <navigator class="btn" open-type="exit" target="miniProgram">退出登录</navigator> -->
+      </view>
+    </view>
+  </view>
+  <!-- 个人成就-弹窗 -->
+  <view wx:if="{{ achievementShowFlag }}" class="remark-view">
+    <view class="remark-view-background">
+      <view class="remark-view-top">个人成就</view>
+      <view class="remark-view-middle">
+        <view class="item">
+          <view class="label">文章被点赞：</view>
+          <view class="text">{{ achievement.praise }}</view>
+        </view>
+        <view class="item">
+          <view class="label">文章被阅读：</view>
+          <view class="text">{{ achievement.view }}</view>
+        </view>
+      </view>
+      <view class="remark-view-bottom">
+        <view class="remark-view-cancel" bindtap="remarkClose">关闭</view>
       </view>
     </view>
   </view>

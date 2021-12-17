@@ -105,3 +105,63 @@
   width: 100% !important;
   height: 84rpx;
 }
+.remark-view {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  position: fixed;
+  top: 0;
+}
+.remark-view-background {
+  background: white;
+  height: 30%;
+  margin: 60% 48rpx 0;
+  border-radius: 8rpx;
+}
+.remark-view-top {
+  padding: 20rpx 32rpx 0;
+  font-size: 36rpx;
+  color: #0b1d32;
+  text-align: center;
+  font-weight: bold;
+}
+.remark-view-middle {
+  margin: 40rpx 32rpx 0;
+  height: 50%;
+  border-radius: 8px;
+  font-size: 32rpx;
+  font-weight: 200;
+}
+.remark-view-middle .item {
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+}
+.remark-view-blank {
+  height: 1rpx;
+  margin-top: 65rpx;
+  background: #dfe2e4;
+}
+.remark-view-bottom {
+  height: 80rpx;
+  border-radius: 8px;
+  font-size: 18px;
+  width: 100%;
+  border-top: 2rpx solid #f4f4f4;
+}
+.remark-view-cancel {
+  line-height: 80rpx;
+  color: #0b1d32;
+  font-weight: 200;
+  font-size: 30rpx;
+  text-align: center;
+}
+.remark-view-confim {
+  width: 50%;
+  line-height: 80rpx;
+  color: #0a73f5;
+  font-weight: 200;
+  font-size: 30rpx;
+}

@@ -314,12 +314,25 @@ var cityDetailById = function (requestData = {}) {
   return data;
 };
 
+// 通过用户id使用
+var achievementByUserInfo = function (requestData = {}) {
+  let data = {};
+  if (requestData.nickName && requestData.nickName.indexOf('叶子') !== -1) {
+    data = {
+      praise: 30,
+      view: 1200,
+    };
+  }
+  return data;
+};
+
 var config = {
   homeList: homeList,
   mineTravelList: mineTravelList,
   travelDetailById: travelDetailById,
   cityDetailById: cityDetailById,
   activityList: activityList,
+  achievementByUserInfo: achievementByUserInfo,
 };
 
 module.exports = config;

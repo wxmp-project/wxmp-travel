@@ -1,5 +1,13 @@
 <!--pages/travelList/travelList.wxml-->
 <view class="container">
+  <picker mode="date" fields="month" value="{{ date }}" start="{{ createStartTime }}" end="{{ createEndTime }}" bindchange="getDateTime">
+    <view class="head">
+      <view class="head-left">{{ searchTimeText }}</view>
+      <view class="arrow-icon">
+        <image src="../../images/icon/icon-arrow.png"></image>
+      </view>
+    </view>
+  </picker>
   <view class="list">
     <view wx:for="{{ list }}" wx:key="travelIndex" wx:for-item="travelItem" class="item" bindtap="goto" data-id="{{ travelItem.id }}">
       <view class="item-box">

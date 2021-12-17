@@ -41,6 +41,12 @@
           "pathName": "pages/cityDetail/cityDetail",
           "query": "id=4",
           "scene": null
+        },
+        {
+          "name": "游记列表",
+          "pathName": "pages/travelList/travelList",
+          "query": "",
+          "scene": null
         }
       ]
     }

@@ -1,6 +1,7 @@
 // pages/home/home.js
 const httpUtil = require('../../utils/httpUtil.js');
 const configUtil = require('../../utils/configUtil.js');
+const util = require('../../utils/util.js');
 Page({
   /**
    * 页面的初始数据
@@ -48,8 +49,16 @@ Page({
   // 跳转城市详情
   gotoCity(e) {
     let id = e.currentTarget.dataset.id;
+    // wx.redirectTo({
+    //   url: '../cityDetail/cityDetail?id=' + id,
+    // });
+    const url = 'pages/cityDetail/cityDetail?id=' + id;
+    util.commonRedirectToNext(url);
+  },
+  // 跳转热门游记列表
+  gotoTravelList() {
     wx.redirectTo({
-      url: '../cityDetail/cityDetail?id=' + id,
+      url: '../travelList/travelList?type=hot',
     });
   },
   /**

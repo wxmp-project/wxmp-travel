@@ -42,7 +42,28 @@ const dateFormatter = (date, fmt) => {
   return fmt;
 };
 
+/**
+ * 公共跳转处理
+ * @param {string} url 最终跳转链接
+ * @return {void} 无
+ */
+const commonRedirectToNext = url => {
+  /** @name 底部tab的路由 */
+  const tabList = ['pages/mine/mine', 'pages/home/home'];
+  // =>true: 属于底部tab的路由使用wx.switchTab
+  if (tabList.filter(item => url.indexOf(item) !== -1).length) {
+    wx.switchTab({
+      url: '/' + url,
+    });
+  } else {
+    wx.redirectTo({
+      url: '/' + url,
+    });
+  }
+};
+
 module.exports = {
   formatTime,
   dateFormatter,
+  commonRedirectToNext,
 };

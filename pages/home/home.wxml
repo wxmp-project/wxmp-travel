@@ -1,7 +1,7 @@
 <!--pages/home/home.wxml-->
 <view class="container">
   <view class="list">
-    <view class="list-title">{{ travel.title }}</view>
+    <view class="list-title" bindtap="gotoTravelList">{{ travel.title }}</view>
     <view wx:for="{{ travel.list }}" wx:key="travelIndex" wx:for-item="travelItem" class="item" bindtap="gotoTravel" data-id="{{ travelItem.id }}">
       <view class="item-box">
         <view class="item-title">{{ travelItem.title }}</view>

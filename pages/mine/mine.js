@@ -8,8 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {},
-    travelList: [],
+    userInfo: {}, // 用户信息
+    travelList: [], // 游记列表
+    achievement: {}, // 个人成就
+    achievementShowFlag: false, // 个人成就弹窗是否展示 默认-false
   },
 
   /**
@@ -89,9 +91,29 @@ Page({
   },
   // 退出登录
   loginOut() {
-    wx.setStorageSync('userInfo', {});
-    wx.switchTab({
-      url: '../home/home',
+    // wx.setStorageSync('userInfo', {});
+    // wx.switchTab({
+    //   url: '../home/home',
+    // });
+    wx.exitMiniProgram({
+      success: function (res) {
+        console.log(res);
+      },
+    });
+  },
+  // 个人成就弹窗-打开
+  remarkShow() {
+    httpUtil.http(configUtil.achievementByUserInfo, this.data.userInfo, res => {
+      this.setData({
+        achievementShowFlag: true,
+        achievement: res,
+      });
+    });
+  },
+  // 个人成就弹窗-关闭
+  remarkClose() {
+    this.setData({
+      achievementShowFlag: false,
     });
   },
   /**
