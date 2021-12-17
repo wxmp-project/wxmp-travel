@@ -4,7 +4,11 @@
     "pages/travelDetail/travelDetail", 
     "pages/cityDetail/cityDetail", 
     "pages/mine/mine",
-    "pages/travelList/travelList"
+    "pages/travelList/travelList",
+    "pages/cityList/cityList",
+    "pages/provinceList/provinceList",
+    "pages/activityFavorite/activityFavorite",
+    "pages/authorize/authorize"
   ],
   "window": {
     "backgroundTextStyle": "light",

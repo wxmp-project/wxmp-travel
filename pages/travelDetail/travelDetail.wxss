@@ -16,6 +16,8 @@
 }
 .head-right {
   color: #999;
+  font-size: 24rpx;
+  font-weight: 300;
 }
 .item {
   background: #fff;
@@ -28,10 +30,10 @@
 .item-content {
   font-size: 30rpx;
   line-height: 1.2;
-  margin-bottom: 20rpx;
   font-weight: 300;
 }
 .item-image {
   width: 100%;
   display: block;
+  margin-top: 20rpx;
 }

@@ -1,3 +1,4 @@
+/** @name 城市列表-公共 */
 const cityList = [
   {
     id: 1,
@@ -99,7 +100,7 @@ const cityList = [
       list: [
         {
           id: 1,
-          content: '北京（Beijing），简称“京”，古称燕京、北平，是中华人民共和国的首都、直辖市、国家中心城市、超大城市，国务院批复确定的中国政治中心、文化中心、国际交往中心、科技创新中心，截至2020年，全市下辖16个区，总面积16410.54平方千米。',
+          content: '北京（Beijing），简称“京”，古称燕京、北平，是中华人民共和国的首都、直辖市、国家中心城市、超大城市，国务院批复确定的中国政治中心、文化中心、国际交往中心、科技创新中心，截至2020年，全市下辖5个区，总面积5410.54平方千米。',
         },
         {
           id: 2,
@@ -107,7 +108,7 @@ const cityList = [
         },
         {
           id: 3,
-          content: '北京故宫，明朝时叫大内宫城，清朝时叫紫禁城，这里原为明、清两代的皇宫，住过24个皇帝，建筑宏伟壮观，体现了中国传统的古典风格和东方格调，是中国乃至全世界现存最大的宫殿，是中华民族宝贵的文化遗产。天坛以其布局合理、构筑精妙而扬名中外，是明、清两代皇帝“祭天”的地方。',
+          content: '北京故宫，明朝时叫大内宫城，清朝时叫紫禁城，这里原为明、清两代的皇宫，住过10个皇帝，建筑宏伟壮观，体现了中国传统的古典风格和东方格调，是中国乃至全世界现存最大的宫殿，是中华民族宝贵的文化遗产。天坛以其布局合理、构筑精妙而扬名中外，是明、清两代皇帝“祭天”的地方。',
         },
         {
           id: 4,
@@ -120,6 +121,7 @@ const cityList = [
     },
   },
 ];
+/** @name 游记列表-公共 */
 const travelList = [
   {
     id: 1,
@@ -144,10 +146,9 @@ const travelList = [
         {
           id: 3,
           content: '湖畔有荷花，我去的季节，还没开，但能看到大片大片的荷叶。有几处景致是有历史底蕴的，比如小沧浪，听说是清乾隆五十七年阿林保重修铁公祠时参照苏州沧浪亭建成。其名之典取自于《楚辞·渔父》“沧浪之水清兮，可以濯吾缨；沧浪之水浊兮，可以濯吾足”。比如南丰祠，原名曾公祠，在大明湖东北岸，北临汇波楼，为纪念北宋文学家曾巩而建。曾巩大家都熟悉吧，唐宋八大家之一，翰林学士欧阳修的学生。',
-          image: '/images/travelDetail/travelDetail-1-03.jpeg',
         },
       ],
-      announceTime: 1621155447000,
+      announceTime: 52155447000,
       author: '叶一一',
     },
   },
@@ -164,7 +165,6 @@ const travelList = [
         {
           id: 1,
           content: '来上海的第一站，我没有着急去东方明珠或者陆家嘴，也没有着急去外滩，我的第一站选择了豫园，听说豫园是一座兼有明清两代南方园林风格的古典园林，我准备去长长见识。',
-          image: '/images/travelDetail/travelDetail-2-01.jpeg',
         },
         {
           id: 2,
@@ -177,7 +177,7 @@ const travelList = [
           image: '/images/travelDetail/travelDetail-2-03.jpeg',
         },
       ],
-      announceTime: 1618020122000,
+      announceTime: 518020122000,
       author: '叶一一',
     },
   },
@@ -194,7 +194,6 @@ const travelList = [
         {
           id: 1,
           content: '来之前，我想的青城山，是道家修道圣地，有仙都之称，是庄严且肃穆的。大道无为，大道至简，我想着来到青城山，可以减少自己的一些世俗的欲望，让自己变得轻松一些。',
-          image: '/images/travelDetail/travelDetail-3-01.jpeg',
         },
         {
           id: 2,
@@ -207,7 +206,7 @@ const travelList = [
           image: '/images/travelDetail/travelDetail-3-03.jpeg',
         },
       ],
-      announceTime: 1602288000000,
+      announceTime: 502288000000,
       author: '叶一一',
     },
   },
@@ -229,7 +228,6 @@ const travelList = [
         {
           id: 2,
           content: '百科里面有写到，故宫又称紫禁城。中国古代讲究“天人合一”的规划理念，用天上的星辰与都城规划相对应，以突出政权的合法性和皇权的至高性。天帝居住在紫微宫，而人间皇帝自诩为受命于天的“天子”。',
-          image: '/images/travelDetail/travelDetail-4-02.jpeg',
         },
         {
           id: 3,
@@ -237,11 +235,549 @@ const travelList = [
           image: '/images/travelDetail/travelDetail-4-03.jpeg',
         },
       ],
-      announceTime: 1582156800000,
+      announceTime: 58256800000,
       author: '叶一一',
     },
   },
 ];
+/** @name 省份列表-公共 */
+const provinceList = [
+  {
+    provinceId: 1,
+    provinceName: '北京市',
+    cityList: [
+      {
+        cityId: 1,
+        cityName: '北京市',
+        provinceId: 1,
+        provinceName: '北京市',
+      },
+    ],
+  },
+  {
+    provinceId: 2,
+    provinceName: '天津市',
+    cityList: [
+      {
+        cityId: 2,
+        cityName: '天津市',
+        provinceId: 2,
+        provinceName: '天津市',
+      },
+    ],
+  },
+  {
+    provinceId: 3,
+    provinceName: '上海市',
+    cityList: [
+      {
+        cityId: 3,
+        cityName: '上海市',
+        provinceId: 3,
+        provinceName: '上海市',
+      },
+    ],
+  },
+  {
+    provinceId: 4,
+    provinceName: '江西省',
+    cityList: [
+      {
+        cityId: 4,
+        cityName: '南昌市',
+        provinceId: 4,
+        provinceName: '江西省',
+      },
+      {
+        cityId: 5,
+        cityName: '景德镇市',
+        provinceId: 4,
+        provinceName: '江西省',
+      },
+      {
+        cityId: 6,
+        cityName: '萍乡市',
+        provinceId: 4,
+        provinceName: '江西省',
+      },
+      {
+        cityId: 7,
+        cityName: '九江市',
+        provinceId: 4,
+        provinceName: '江西省',
+      },
+      {
+        cityId: 8,
+        cityName: '新余市',
+        provinceId: 4,
+        provinceName: '江西省',
+      },
+      {
+        cityId: 9,
+        cityName: '鹰潭市',
+        provinceId: 4,
+        provinceName: '江西省',
+      },
+      {
+        cityId: 10,
+        cityName: '赣州市',
+        provinceId: 4,
+        provinceName: '江西省',
+      },
+      {
+        cityId: 11,
+        cityName: '吉安市',
+        provinceId: 4,
+        provinceName: '江西省',
+      },
+      {
+        cityId: 12,
+        cityName: '宜春市',
+        provinceId: 4,
+        provinceName: '江西省',
+      },
+      {
+        cityId: 13,
+        cityName: '抚州市',
+        provinceId: 4,
+        provinceName: '江西省',
+      },
+      {
+        cityId: 14,
+        cityName: '上饶市',
+        provinceId: 4,
+        provinceName: '江西省',
+      },
+    ],
+  },
+  {
+    provinceId: 5,
+    provinceName: '山东省',
+    cityList: [
+      {
+        cityId: 15,
+        cityName: '烟台市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 16,
+        cityName: '青岛市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 17,
+        cityName: '济南市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 18,
+        cityName: '淄博市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 19,
+        cityName: '枣庄市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 20,
+        cityName: '东营市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 21,
+        cityName: '潍坊市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 22,
+        cityName: '济宁市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 9,
+        cityName: '泰安市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 10,
+        cityName: '威海市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 25,
+        cityName: '日照市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 26,
+        cityName: '莱芜市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 27,
+        cityName: '临沂市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 28,
+        cityName: '德州市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 29,
+        cityName: '聊城市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 30,
+        cityName: '滨州市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+      {
+        cityId: 31,
+        cityName: '菏泽市',
+        provinceId: 5,
+        provinceName: '山东省',
+      },
+    ],
+  },
+  {
+    provinceId: 6,
+    provinceName: '河南省',
+    cityList: [
+      {
+        cityId: 32,
+        cityName: '商丘市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 33,
+        cityName: '平顶山市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 34,
+        cityName: '郑州市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 35,
+        cityName: '开封市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 36,
+        cityName: '洛阳市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 37,
+        cityName: '安阳市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 38,
+        cityName: '鹤壁市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 39,
+        cityName: '新乡市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 40,
+        cityName: '焦作市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 41,
+        cityName: '濮阳市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 42,
+        cityName: '许昌市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 43,
+        cityName: '漯河市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 44,
+        cityName: '三门峡市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 45,
+        cityName: '南阳市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 46,
+        cityName: '信阳市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 47,
+        cityName: '周口市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 48,
+        cityName: '驻马店市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+      {
+        cityId: 49,
+        cityName: '济源市',
+        provinceId: 5,
+        provinceName: '河南省',
+      },
+    ],
+  },
+  {
+    provinceId: 7,
+    provinceName: '重庆市',
+    cityList: [
+      {
+        cityId: 50,
+        cityName: '重庆市',
+        provinceId: 7,
+        provinceName: '重庆市',
+      },
+    ],
+  },
+  {
+    provinceId: 9,
+    provinceName: '四川省',
+    cityList: [
+      {
+        cityId: 51,
+        cityName: '成都市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 52,
+        cityName: '内江市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 53,
+        cityName: '自贡市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 54,
+        cityName: '攀枝花市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 55,
+        cityName: '泸州市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 56,
+        cityName: '德阳市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 57,
+        cityName: '绵阳市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 58,
+        cityName: '广元市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 59,
+        cityName: '遂宁市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 60,
+        cityName: '乐山市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 61,
+        cityName: '南充市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 62,
+        cityName: '眉山市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 63,
+        cityName: '宜宾市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 64,
+        cityName: '广安市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 65,
+        cityName: '达州市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 67,
+        cityName: '雅安市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 68,
+        cityName: '巴中市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 69,
+        cityName: '资阳市',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 70,
+        cityName: '阿坝藏族羌族自治州',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 71,
+        cityName: '甘孜藏族自治州',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+      {
+        cityId: 72,
+        cityName: '凉山彝族自治州',
+        provinceId: 9,
+        provinceName: '四川省',
+      },
+    ],
+  },
+  {
+    provinceId: 10,
+    provinceName: '贵州省',
+    cityList: [
+      {
+        cityId: 73,
+        cityName: '贵阳市',
+        provinceId: 10,
+        provinceName: '贵州省',
+      },
+      {
+        cityId: 74,
+        cityName: '六盘水市',
+        provinceId: 10,
+        provinceName: '贵州省',
+      },
+      {
+        cityId: 75,
+        cityName: '遵义市',
+        provinceId: 10,
+        provinceName: '贵州省',
+      },
+      {
+        cityId: 76,
+        cityName: '安顺市',
+        provinceId: 10,
+        provinceName: '贵州省',
+      },
+      {
+        cityId: 77,
+        cityName: '毕节市',
+        provinceId: 10,
+        provinceName: '贵州省',
+      },
+      {
+        cityId: 78,
+        cityName: '铜仁市',
+        provinceId: 10,
+        provinceName: '贵州省',
+      },
+      {
+        cityId: 79,
+        cityName: '黔西南布依族苗族自治州',
+        provinceId: 10,
+        provinceName: '贵州省',
+      },
+      {
+        cityId: 80,
+        cityName: '黔东南苗族侗族自治州',
+        provinceId: 10,
+        provinceName: '贵州省',
+      },
+      {
+        cityId: 81,
+        cityName: '黔南布依族苗族自治州',
+        provinceId: 10,
+        provinceName: '贵州省',
+      },
+    ],
+  },
+];
+
 // 首页列表
 var homeList = function () {
   let data = {
@@ -270,6 +806,11 @@ var activityList = function () {
       {
         id: 2,
         name: '环球影城 说走就走',
+      },
+      {
+        id: 3,
+        name: '年度喜爱城市评选开始了',
+        path: 'pages/activityFavorite/activityFavorite',
       },
     ],
   };
@@ -314,7 +855,7 @@ var cityDetailById = function (requestData = {}) {
   return data;
 };
 
-// 通过用户id使用
+// 通过用户使用
 var achievementByUserInfo = function (requestData = {}) {
   let data = {};
   if (requestData.nickName && requestData.nickName.indexOf('叶子') !== -1) {
@@ -326,6 +867,25 @@ var achievementByUserInfo = function (requestData = {}) {
   return data;
 };
 
+// 获取全部省份
+var getProvinceList = function (requestData = {}) {
+  let list = [].concat(provinceList);
+  return list;
+};
+
+// 获取当前省份下的城市
+var getCityList = function (requestData = {}) {
+  let provinceList = [].concat(provinceList);
+  let cityList = [];
+  if (requestData.provinceId) {
+    let list = provinceList.filter(province => province.provinceId == requestData.provinceId);
+    if (list.length > 0) {
+      cityList = list[0].cityList;
+    }
+  }
+  return cityList;
+};
+
 var config = {
   homeList: homeList,
   mineTravelList: mineTravelList,
@@ -333,6 +893,8 @@ var config = {
   cityDetailById: cityDetailById,
   activityList: activityList,
   achievementByUserInfo: achievementByUserInfo,
+  getProvinceList: getProvinceList,
+  getCityList: getCityList,
 };
 
 module.exports = config;

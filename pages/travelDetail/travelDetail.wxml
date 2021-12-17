@@ -10,7 +10,7 @@
   <view class="list">
     <view wx:for="{{ detail.list }}" wx:key="index" wx:for-item="item" class="item">
       <view class="item-content">{{ item.content }}</view>
-      <image src="{{ item.image }}" class="item-image"></image>
+      <image src="{{ item.image }}" class="item-image" wx-if="{{ item.image }}"></image>
     </view>
   </view>
 </view>

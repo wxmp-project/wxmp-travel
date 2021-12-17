@@ -49,9 +49,6 @@ Page({
   // 跳转城市详情
   gotoCity(e) {
     let id = e.currentTarget.dataset.id;
-    // wx.redirectTo({
-    //   url: '../cityDetail/cityDetail?id=' + id,
-    // });
     const url = 'pages/cityDetail/cityDetail?id=' + id;
     util.commonRedirectToNext(url);
   },
