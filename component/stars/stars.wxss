@@ -1,0 +1,22 @@
+/* component/stars/stars.wxss */
+.stars-view {
+  display: flex;
+  align-items: center;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.big-stars {
+  width: 44rpx;
+  height: 44rpx;
+  margin: 0px 8rpx;
+  vertical-align: middle;
+}
+
+.litter-stars {
+  width: 36rpx;
+  height: 36rpx;
+  margin: 0px 4rpx;
+  vertical-align: middle;
+}
