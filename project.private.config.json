@@ -47,6 +47,24 @@
           "pathName": "pages/travelList/travelList",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "省份",
+          "pathName": "pages/provinceList/provinceList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "城市",
+          "pathName": "pages/cityList/cityList",
+          "query": "provinceId=8&provinceName=山东省",
+          "scene": null
+        },
+        {
+          "name": "activityFavorite",
+          "pathName": "pages/activityFavorite/activityFavorite",
+          "query": "",
+          "scene": null
         }
       ]
     }

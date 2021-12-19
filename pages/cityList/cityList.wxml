@@ -1,2 +1,63 @@
 <!--pages/cityList/cityList.wxml-->
-<text>pages/cityList/cityList.wxml</text>
+<view class="container">
+  <view class="box">
+    <view class="head">
+      <text>所属省份: {{ province.provinceName }}</text>
+      <text class="head-change text-blue" bindtap="gotoProvince">更换省份</text>
+    </view>
+    <!-- 搜索框 -->
+    <view class="search">
+      <view class="search-box">
+        <image class="search-icon" src="/images/icon/search-icon.png" ></image>
+        <input class="search-input" placeholder="请输入社区" bindinput="bindKeyInput" placeholder-class="placeholder" focus type="text" value="{{ inputValue }}" />
+      </view>
+    </view>
+    <view class="all-check flex weui-cells" wx:if="{{ list.length > 0 }}">
+      <view class="weui-cell__hd {{allCheckedHalf ? 'weui-cell_half' : ''}}">
+        <checkbox checked="{{allChecked}}" bindtap="selectAll"/>
+      </view>
+      <view class="weui-cell__bd">全选</view>
+    </view>
+    <checkbox-group bindchange="checkboxChange" class="checkbox-box">
+      <view class="weui-cells weui-cells_after-title" wx:for="{{ list }}" wx:key="index" wx:for-item="item" wx:if="{{ list.length > 0 }}">
+        <text class="scroll-letter">{{ item.firstLetter }}</text>
+          <label class="weui-cell weui-check__label scroll-item checkbox-item" wx:for="{{item.list}}" wx:key="cityIndex" wx:for-item="city">
+            <view class="weui-cell__hd">
+              <checkbox value="{{city.cityId}}" checked="{{city.checked}}"/>
+            </view>
+            <view class="weui-cell__bd">{{ city.cityName }}</view>
+          </label>
+      </view>
+    </checkbox-group>
+    <view  wx:if="{{ list.length == 0 }}" class="checkbox-empty">没有找到想找的城市？请重新搜索</view>
+  </view>
+  <view class="popup-view" wx:if="{{ chooseCityShow }}">
+    <view class="popup-view-bg" bindtap="chooseCityClose"></view>
+    <view class="popup-view-box">
+      <view class="popup-head">
+        <text class="popup-head-left">已选列表</text>
+        <text class="popup-head-close" bindtap="chooseCityClose">X</text>
+      </view>
+      <scroll-view class="popup-scroll" scroll-y>
+        <view wx:for="{{ chooseCityList }}" wx:key="index" wx:for-item="item" class="popup-scroll-box">
+          <view class="scroll-item-box">
+            <text class="scroll-item-text">{{ item.cityName }}</text>
+            <view class="scroll-icon" bindtap="chooseCityDelete" data-chooseCityIndex="{{ index }}">
+              <image class="scroll-icon-img" src="../../images/icon/icon-delete.png"></image>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="foot-group">
+    <view class="foot-box">
+      <view class="foot-left">
+        <text class="foot-left-text">已选：{{ chooseCityList.length }}个</text>
+        <text class="foot-left-view text-blue" wx:if="{{ chooseCityList.length != 0 }}" bindtap="chooseCityOpen">查看</text>
+      </view>
+      <button class="foot-btn" bindtap="defineOperate">确定</button>
+    </view>
+  </view>
+</view>
+

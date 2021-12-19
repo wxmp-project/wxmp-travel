@@ -6,7 +6,7 @@
   height: 48px;
   background: white;
   display: flex;
-  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: 0;
   z-index: 99;
 }
 
@@ -29,11 +29,11 @@
   flex-direction: column;
 }
 
-.tab-bar-item image {
+.item-image {
   width: 24px;
   height: 24px;
 }
 
-.tab-bar-item view {
+.item-text {
   font-size: 10px;
 }

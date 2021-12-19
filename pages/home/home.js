@@ -58,6 +58,15 @@ Page({
       url: '../travelList/travelList?type=hot',
     });
   },
+  // 轮播-点击事件
+  activityTap(e) {
+    const item = e.currentTarget.dataset.item;
+    if (item.path) {
+      wx.redirectTo({
+        url: '/' + item.path,
+      });
+    }
+  },
   /**
    * 用户点击右上角分享
    */

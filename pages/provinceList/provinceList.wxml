@@ -1,2 +1,18 @@
 <!--pages/provinceList/provinceList.wxml-->
-<text>pages/provinceList/provinceList.wxml</text>
+<view class="container">
+  <view class="box">
+    <scroll-view class="scroll" scroll-y>
+      <view wx:for="{{ list }}" wx:key="index" wx:for-item="item" class="scroll-box" wx:if="{{ list.length > 0 }}">
+        <text class="scroll-letter">{{ item.firstLetter }}</text>
+        <view wx:for="{{ item.list }}" wx:key="provinceIndex" wx:for-item="province" data-province="{{ province }}" data-provinceId="{{ province.id }}" class="scroll-item" bindtap="goto">
+          <view class="scroll-item-box">
+            <text class="scroll-item-text">{{ province.provinceName }}</text>
+            <view class="scroll-icon">
+              <image class="scroll-icon-img" src="../../images/icon/icon-arrow.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

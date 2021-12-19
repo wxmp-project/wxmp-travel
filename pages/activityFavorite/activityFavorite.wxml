@@ -1,2 +1,21 @@
 <!--pages/activityFavorite/activityFavorite.wxml-->
-<text>pages/activityFavorite/activityFavorite.wxml</text>
+<view class="container">
+  <view class="head" bindtap="goto">
+    <view class="head-left">{{ head.tips }}</view>
+    <view class="head-right" wx:if="{{ submitFlag }}">
+      <view>{{ head.cityText }}</view>
+      <view class="arrow-icon">
+        <image src="../../images/icon/icon-arrow.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="list">
+    <view wx:for="{{ cityList }}" wx:key="index" wx:for-item="item" class="item">
+      <view class="item-left">{{ item.cityName }}</view>
+      <stars canSelect="{{ item.stars == 0 }}" starCount="{{ item.stars }}" bind:myevent="setStartCount" index="{{ index }}"></stars>
+    </view>
+  </view>
+  <view class="footer" wx:if="{{ cityList.length != 0 && submitFlag }}">
+    <button class="footer-btn" bindtap="submit">提交</button>
+  </view>
+</view>

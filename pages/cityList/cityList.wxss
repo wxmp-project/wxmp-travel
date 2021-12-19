@@ -1,1 +1,279 @@
 /* pages/cityList/cityList.wxss */
+.container {
+  position: relative;
+}
+.box {
+  margin-top: 0;
+  flex: 1;
+  overflow-y: scroll;
+  background: #fff;
+  padding-bottom: 84rpx;
+  height: 100vh;
+}
+.flex {
+  display: flex;
+}
+.head {
+  height: 72rpx;
+  line-height: 72rpx;
+  display: flex;
+  align-items: center;
+  background: #f6f6f9;
+  padding: 0 36rpx;
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 300;
+}
+.head-change {
+  margin-left: 30rpx;
+}
+.text-blue {
+  color: #0a73f5;
+}
+.search {
+  background: #fff;
+}
+.search-box {
+  margin: 18rpx 36rpx;
+  background: #f6f6f9;
+  height: 72rpx;
+  line-height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+.search-input {
+  font-size: 24rpx;
+  color: #333;
+  line-height: 30rpx;
+  margin-left: 12rpx;
+  width: 80%;
+  font-weight: 300;
+}
+.placeholder {
+  font-size: 24rpx;
+  color: #c1c1c1;
+  font-weight: 200;
+}
+.all-check {
+  height: 96rpx;
+  padding: 0 32rpx;
+  background: #fff;
+  align-items: center;
+}
+.checkbox-empty {
+  font-size: 30rpx;
+  font-weight: 300;
+  color: #111;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.checkbox-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 92rpx;
+  padding: 0 32rpx;
+  line-height: 92rpx;
+}
+.weui-cells checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+checkbox .wx-checkbox-input {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 4rpx;
+}
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  color: #fff;
+  background: #007af5;
+}
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  width: 32rpx;
+  height: 32rpx;
+  border: 2rpx solid #007af5;
+}
+.weui-cell__bd {
+  margin-left: 10rpx;
+  font-weight: 300;
+}
+.weui-cell_half .wx-checkbox-input {
+  background: #007af5;
+  width: 32rpx;
+  height: 32rpx;
+  border: 2rpx solid #007af5;
+  color: #fff;
+}
+.weui-cell_half .wx-checkbox-input::before {
+  content: '';
+  /*CSS伪类用法*/
+  position: absolute;
+  /*定位背景横线的位置*/
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  /*宽和高做出来的背景横线*/
+  width: 18rpx;
+  height: 4rpx;
+  transform: translateX(-9rpx) translateY(-3rpx);
+}
+/* 滚动列表 */
+.scroll {
+  height: 100vh;
+}
+.scroll-letter {
+  height: 40rpx;
+  background: #f5f5f5;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  text-align: left;
+  padding-left: 32rpx;
+  width: 100%;
+  display: block;
+  color: #999;
+}
+.scroll-item-text {
+  height: 92rpx;
+  line-height: 92rpx;
+  font-size: 30rpx;
+  color: #333333;
+  display: block;
+  position: relative;
+  font-weight: 200;
+}
+.scroll-item-text::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0px;
+  content: '';
+  border-bottom: 1rpx solid #eaeaea;
+  transform: scaleY(0.8); /*缩放*/
+}
+.foot-group {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 84rpx;
+  padding: 0;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 999;
+}
+.foot-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+.foot-left {
+  flex: 1;
+  font-size: 32rpx;
+  color: #111;
+  padding-left: 36rpx;
+  font-weight: 200;
+}
+.foot-left-view {
+  margin-left: 40rpx;
+}
+.foot-btn {
+  width: 50% !important;
+  height: 84rpx;
+  background: #007af5;
+  border-radius: 4rpx;
+  font-size: 30rpx;
+  color: #fff;
+  font-weight: 200;
+  margin: 0 auto;
+}
+.popup-view {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  position: fixed;
+  bottom: 84rpx;
+}
+.popup-view-bg {
+  height: 50%;
+  width: 100%;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+}
+.popup-view-box {
+  background: white;
+  height: 50%;
+  border-radius: 8rpx 8rpx 0 0;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  left: 0;
+}
+.popup-head {
+  padding: 0 36rpx;
+  font-size: 32rpx;
+  color: #111;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.popup-head-left {
+  display: block;
+  flex: 1;
+  text-align: center;
+}
+.popup-head-close {
+  font-size: 30rpx;
+  width: 60rpx;
+  text-align: center;
+}
+.popup-scroll {
+  overflow-y: scroll;
+  height: 80%;
+  width: 100%;
+}
+.popup-scroll-box {
+  padding: 0 36rpx;
+}
+.scroll-item-box {
+  height: 92rpx;
+  line-height: 92rpx;
+  font-size: 30rpx;
+  color: #333333;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 200;
+}
+.scroll-item-box::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0px;
+  content: '';
+  border-bottom: 1rpx solid #eaeaea;
+  transform: scaleY(0.8); /*缩放*/
+}
+.scroll-icon {
+  width: 80rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+.scroll-icon-img {
+  width: 36rpx;
+  height: 36rpx;
+  display: block;
+}

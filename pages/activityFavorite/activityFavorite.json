@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "stars": "../../component/stars/stars"
+  },
+  "navigationBarTitleText": "评选喜爱城市"
 }

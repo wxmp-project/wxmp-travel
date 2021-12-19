@@ -38,8 +38,8 @@
     <view class="bottom-activity-box">
       <swiper class="bottom-swiper" indicator-dots="{{ false }}" autoplay="{{ true }}" interval="4000" duration="500" circular="true">
         <block wx:for="{{ activityList }}" wx:for-item="activity" wx:key="unique">
-          <swiper-item class="swiper-items">
-            <view class="activity-text" bindtap="activityTap">{{ activity.name }}</view>
+          <swiper-item class="swiper-items" bindtap="activityTap" data-item="{{ activity }}">
+            <view class="activity-text">{{ activity.name }}</view>
           </swiper-item>
         </block>
       </swiper>

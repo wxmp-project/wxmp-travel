@@ -1,66 +1,41 @@
 // pages/provinceList/provinceList.js
-Page({
+const httpUtil = require('../../utils/httpUtil.js');
+const configUtil = require('../../utils/configUtil.js');
 
+Page({
   /**
    * 页面的初始数据
    */
   data: {
-
+    list: [], // 城市列表
+    next: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getList();
+    this.setData({
+      next: options.next,
+    });
   },
-
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 获取省份列表
    */
-  onReady: function () {
-
+  getList() {
+    const that = this;
+    httpUtil.http(configUtil.getProvinceList, {}, res => {
+      that.setData({
+        list: res,
+      });
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  // 跳转
+  goto(e) {
+    let province = e.currentTarget.dataset.province;
+    wx.navigateTo({
+      url: '../cityList/cityList?provinceName=' + province.provinceName + '&provinceId=' + province.provinceId + '&next=' + this.data.next,
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+});
