@@ -62,9 +62,17 @@ Page({
   activityTap(e) {
     const item = e.currentTarget.dataset.item;
     if (item.path) {
-      wx.redirectTo({
-        url: '/' + item.path,
-      });
+      // =>true: 判断是否已授权 没有授权跳转授权页面
+      let userInfo = wx.getStorageSync('userInfo') || {};
+      if (JSON.stringify(userInfo) === '{}') {
+        wx.redirectTo({
+          url: '../authorize/authorize?next=' + item.path,
+        });
+      } else {
+        wx.redirectTo({
+          url: '/' + item.path,
+        });
+      }
     }
   },
   /**

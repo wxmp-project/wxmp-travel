@@ -1,1 +1,31 @@
 /* pages/authorize/authorize.wxss */
+.container {
+  background: #fff;
+  height: 100vh;
+}
+
+.box {
+  padding: 32rpx;
+}
+.text {
+  color: #333;
+  font-size: 32rpx;
+  padding: 0 48rpx;
+  font-weight: 500;
+}
+.mes {
+  margin-top: 16rpx;
+  color: #999;
+  font-size: 26rpx;
+  padding: 0 48rpx;
+}
+
+.btn {
+  width: 690rpx !important;
+  border-radius: 60rpx;
+  line-height: 52rpx;
+  box-sizing: border-box;
+  margin-top: 80rpx;
+  background: #0a73f5;
+  color: #fff;
+}

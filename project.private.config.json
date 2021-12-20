@@ -65,6 +65,12 @@
           "pathName": "pages/activityFavorite/activityFavorite",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "authorize",
+          "pathName": "pages/authorize/authorize",
+          "query": "",
+          "scene": null
         }
       ]
     }
