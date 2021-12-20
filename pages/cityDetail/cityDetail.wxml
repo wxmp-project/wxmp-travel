@@ -1,10 +1,18 @@
 <!--pages/cityDetail/cityDetail.wxml-->
+<!-- wxs显示默认文案 -->
+<wxs module="script">
+  var getShowText = function(text, defaultText='内容摘自百度百科') {
+    var showText = showText ? showText : defaultText;
+    return showText;
+  }
+  module.exports.getShowText = getShowText;
+</wxs>
 <view class="container">
   <view class="banner">
     <view class="banner-box">
       <view class="head">
         <view class="head-left">{{ detail.describe }}</view>
-        <view class="head-right">{{ detail.source }}</view>
+        <view class="head-right" style="color:{{comm.setRightTextColor(detail.source)}}">{{ script.getShowText(detail.source) }}</view>
       </view>
       <image src="{{ detail.banner }}"></image>
     </view>
@@ -15,3 +23,4 @@
     </view>
   </view>
 </view>
+<wxs src="../../wxs/comm.wxs" module="comm" />

@@ -14,7 +14,7 @@ Component({
       type: Number,
       value: 5,
     },
-    // 索引
+    // 当前引用组件的子项的索引 当父组件是数组时有效
     index: {
       type: Number,
       value: 0,
@@ -42,8 +42,8 @@ Component({
         id: 5,
       },
     ],
-    scrNoSelect: '/images/icon/star-noSelect.png',
-    scrSelect: '/images/icon/star-select.png',
+    starNoSelect: '/images/icon/star-noSelect.png',
+    starSelect: '/images/icon/star-select.png',
   },
 
   /**

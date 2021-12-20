@@ -2,7 +2,7 @@
 <view class="container">
   <view class="head">
     <view class="head-left">{{ detail.author }}</view>
-    <view class="head-right">
+    <view class="head-right" style="color:{{comm.setRightTextColor('发布')}}">
       <text>{{ detail.announceTime }}</text>
       <text>发布</text>
     </view>
@@ -14,3 +14,4 @@
     </view>
   </view>
 </view>
+<wxs src="../../wxs/comm.wxs" module="comm" />

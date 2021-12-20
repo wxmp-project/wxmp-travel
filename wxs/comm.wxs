@@ -1,0 +1,15 @@
+/**
+ * 设置详情页顶部右侧文案颜色
+ * @param {string} text 右侧文字内容
+ * @return {string} color 文字颜色
+ */
+function setRightTextColor(text) {
+  var color = '#999';
+  if (text && text.indexOf('发布') !== -1) {
+    color = '#0a73f5';
+  }
+  return color;
+}
+module.exports = {
+  setRightTextColor: setRightTextColor,
+};

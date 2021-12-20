@@ -1,6 +1,6 @@
 <!--component/stars/stars.wxml-->
 <view class="stars-view">
   <view class="flex" wx:for="{{ imgs }}" wx:key="id" wx:for-item="item" bindtap="_changeColor" data-index="{{ item.id }}">
-    <image class="canSelect ? 'big-stars' : litter-stars" src="{{ item.id > starCount ? scrNoSelect : scrSelect }}"></image>
+    <image class="canSelect ? big-star : litter-star" src="{{ item.id > starCount ? starNoSelect : starSelect }}"></image>
   </view>
 </view>

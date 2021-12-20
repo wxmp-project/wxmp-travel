@@ -7,14 +7,14 @@
   display: flex;
   align-items: center;
 }
-.big-stars {
+.big-star {
   width: 44rpx;
   height: 44rpx;
   margin: 0px 8rpx;
   vertical-align: middle;
 }
 
-.litter-stars {
+.litter-star {
   width: 36rpx;
   height: 36rpx;
   margin: 0px 4rpx;

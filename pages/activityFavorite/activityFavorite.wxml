@@ -1,8 +1,8 @@
 <!--pages/activityFavorite/activityFavorite.wxml-->
 <view class="container">
-  <view class="head" bindtap="goto">
+  <view class="head">
     <view class="head-left">{{ head.tips }}</view>
-    <view class="head-right" wx:if="{{ submitFlag }}">
+    <view class="head-right" wx:if="{{ submitFlag }}" bindtap="goto">
       <view>{{ head.cityText }}</view>
       <view class="arrow-icon">
         <image src="../../images/icon/icon-arrow.png"></image>

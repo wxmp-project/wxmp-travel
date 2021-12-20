@@ -30,9 +30,6 @@
   justify-content: space-between;
   font-weight: 300;
 }
-.head-right {
-  color: #999;
-}
 .item {
   background: #fff;
   border-radius: 16rpx;

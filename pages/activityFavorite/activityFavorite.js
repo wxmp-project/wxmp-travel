@@ -52,9 +52,9 @@ Page({
       submitFlag: !canSubmitFlag,
     });
   },
-  //
+  // 事件监听
   setStartCount: function (e) {
-    let detail = e.detail;
+    let detail = e.detail; // 子组件通信传的值
     let cityList = [].concat(this.data.cityList);
     cityList[detail.index].stars = detail.starCount;
     this.setData({
