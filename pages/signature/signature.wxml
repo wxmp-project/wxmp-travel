@@ -1,0 +1,4 @@
+<!--pages/signature/signature.wxml-->
+<canvas canvas-id="canvas" style="width:{{ width + 'px' }};height:{{ height + 'px' }}" catchtouchstart="catchtouchstart" catchtouchmove="catchtouchmove" catchtouchend="catchtouchend"></canvas>
+<view class="btn-reset" catchtap="clearCanvas">重新绘制</view>
+<view class="btn-ok" catchtap="canvasToImg">确认</view>

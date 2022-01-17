@@ -1,0 +1,26 @@
+<!--pages/zenghouyi/zenghouyi.wxml-->
+<!-- wxs展示处理-->
+<wxs module="script">
+  var getDisplayVal = function(pageType,type) { var val = pageType == type ? 'block' : 'none'; return val; }; module.exports.getDisplayVal = getDisplayVal;
+</wxs>
+<view class="container">
+  <view class="home bozhong" style="display:{{ script.getDisplayVal(pageType, 'bozhong') }}">
+    <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE.png" class="home-close" bindtap="getHome" data-key="bozhong"></image>
+    <view class="home-center">
+      <view class="zouyue-top">
+        <view class="bozhong-top-img">
+          <image src="{{ bozhong.src }}"></image>
+        </view>
+        <view class="zouyue-introduce bozhong-introduce">
+          <view class="zouyue-introduce-title">{{ bozhong.name }}</view>
+          <view class="zouyue-introduce-size">
+            <view class="zouyue-introduce-size-title">尺寸：</view>
+            <view class="zouyue-introduce-size-text">{{ bozhong.sizeText }}</view>
+          </view>
+          <view class="zouyue-introduce-text bozhong-introduce-text">{{ bozhong.introduce }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/1%E5%AF%BC%E8%88%AA%E9%A1%B5_%E5%BA%95%E7%BA%B9.jpg" class="container-bg"></image>
+</view>

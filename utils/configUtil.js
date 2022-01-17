@@ -1014,11 +1014,12 @@ var activityList = function () {
     list: [
       {
         id: 1,
-        name: '下雪了 看故宫换新装',
+        name: '新春送福 曾侯乙编钟',
+        path: 'pages/zenghouyi/zenghouyi',
       },
       {
         id: 2,
-        name: '环球影城 说走就走',
+        name: '下雪了 看故宫换新装',
       },
       {
         id: 3,

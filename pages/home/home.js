@@ -2,6 +2,8 @@
 const httpUtil = require('../../utils/httpUtil.js');
 const configUtil = require('../../utils/configUtil.js');
 const util = require('../../utils/util.js');
+
+let QiniuToken = '';
 Page({
   /**
    * 页面的初始数据

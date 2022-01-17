@@ -1,0 +1,196 @@
+<!--pages/zenghouyi/zenghouyi.wxml-->
+<!-- wxs展示处理-->
+<wxs module="script">
+  var getDisplayVal = function(pageType,type) { var val = pageType == type ? 'block' : 'none'; return val; }; module.exports.getDisplayVal = getDisplayVal;
+</wxs>
+<view class="container">
+  <view class="home" style="display:{{ script.getDisplayVal(pageType, 'home') }}">
+    <view wx:for="{{ navList }}" wx:key="navIndex" wx:for-item="navItem" class="home-item" bindtap="getItemShow" data-item="{{ navItem }}" style="top:{{ navItem.top ? navItem.top + 'px' : '' }};bottom:{{ navItem.bottom ? navItem.bottom + 'px' : '' }};left:{{ navItem.left + '%' }};">
+      <view class="home-item-box">
+        <view class="home-item-title" hover-class="home-item-title-curr" style="bottom:{{ navItem.id < 5 ? '32rpx' : '52rpx' }}">{{ navItem.name }}</view>
+        <image src="../../images/zenghouyi/nav-bg-up.png" class="home-item-bg" wx-if="{{ navItem.id < 5 }}"></image>
+        <image src="../../images/zenghouyi/nav-bg-down.png" class="home-item-bg" wx-if="{{ navItem.id > 4 }}"></image>
+      </view>
+    </view>
+    <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/1%E5%AF%BC%E8%88%AA%E9%A1%B5_%E7%BC%96%E9%92%9F%E6%8A%A0%E5%9B%BE.jpg" class="home-main"></image>
+  </view>
+  <view class="home jiegou" style="display:{{ script.getDisplayVal(pageType, 'jiegou') }}">
+    <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE.png" class="home-close" bindtap="getHome" data-key="jiegou"></image>
+    <view class="jiegou-image">
+      <view class="jiegou-image-box">
+        <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/10%E9%92%9F%E6%9E%B6%E9%A1%B5_%E5%B0%BA%E5%AF%B8%E7%BA%BF.png" class="jiegou-image-sizeTag" wx-if="{{ jiegouFlag === 'size' }}"></image>
+        <view class="jiegou-image-topHighlight" wx-if="{{ jiegouTextFlag === 'structureTop' }}"></view>
+        <view class="jiegou-image-middleHighlight" wx-if="{{ jiegouTextFlag === 'structureMiddle' }}"></view>
+        <view class="jiegou-image-bottomHighlight" wx-if="{{ jiegouTextFlag === 'structureBottom' }}"></view>
+        <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/10%E9%92%9F%E6%9E%B6%E9%A1%B5_%E9%95%88%E9%92%9F%E9%97%AA-%E5%9B%BE.png" class="jiegou-image-structureTwinkle" wx-if="{{ jiegouTextFlag === 'structure' || jiegouTextFlag === 'structureBottom' }}"></image>
+        <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/10%E9%92%9F%E6%9E%B6%E9%A1%B5_%E7%BC%96%E9%92%9F%E5%AE%8C%E6%95%B4.jpg" class="jiegou-image-all"></image>
+      </view>
+      <view class="jiegou-image-text">{{ jiegou.text[jiegouTextFlag] }}</view>
+    </view>
+
+    <view class="jiegou-structure-nav" wx-if="{{ jiegouFlag === 'structure' }}">
+      <view wx:for="{{ jiegou.structureList }}" wx:key="navIndex" wx:for-item="navItem" class="jiegou-structure-item" bindtap="jiegouStructureNavChange" data-item="{{ navItem }}">
+        <view class="jiegou-structure-item-box {{ navItem.key === jiegouTextFlag ? 'jiegou-structure-item-curr' : '' }}">
+          <view class="jiegou-structure-nav-title">{{ navItem.name }}</view>
+        </view>
+      </view>
+    </view>
+    <view class="jiegou-nav">
+      <view wx:for="{{ jiegou.list }}" wx:key="navIndex" wx:for-item="navItem" class="jiegou-item" bindtap="jiegouNavChange" data-item="{{ navItem }}">
+        <view class="jiegou-item-box">
+          <view class="jiegou-item-title {{ navItem.key === jiegouFlag ? 'jiegou-item-title-curr' : '' }}">{{ navItem.name }}</view>
+          <image src="../../images/zenghouyi/title-bg.png" class="jiegou-item-bg"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="home xijie" style="display:{{ script.getDisplayVal(pageType, 'xijie') }}">
+    <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE.png" class="home-close" bindtap="getHome" data-key="xijie"></image>
+    <view class="home-center">
+      <view class="xijie-nav">
+        <view wx:for="{{ xijie.list }}" wx:key="navIndex" wx:for-item="navItem" class="xijie-item" bindtap="xijieGetItemShow" data-item="{{ navItem }}">
+          <view class="xijie-item-box {{ navItem.key === xijieFlag ? 'xijie-item-curr' : '' }}">
+            <view class="xijie-item-title">{{ xijie.enum[navItem.key].name }}</view>
+          </view>
+        </view>
+      </view>
+      <view class="xijie-content">
+        <view class="xijie-content-img">
+          <image src="{{ xijieItem.src }}"></image>
+        </view>
+        <view class="xijie-introduce">
+          <view class="xijie-introduce-title">{{ xijieItem.name }}</view>
+          <view class="xijie-introduce-text">{{ xijieItem.introduce }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="home yiwen" style="display:{{ script.getDisplayVal(pageType, 'yiwen') }}">
+    <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE.png" class="home-close" bindtap="getHome" data-key="yiwen"></image>
+    <view class="home-center">
+      <view class="yiwen-top">
+        <view class="yiwen-top-box {{ yiwenFlag === 'old' ? 'yiwen-top-curr-old' : 'yiwen-top-curr-new' }}" bindtap="yiwenChange">
+          <image src="{{ yiwen.old }}" class="yiwen-top-img yiwen-top-old"></image>
+          <image src="{{ yiwen.new }}" class="yiwen-top-img yiwen-top-new"></image>
+        </view>
+        <view class="yiwen-top-text">
+          {{ yiwen.text }}
+        </view>
+      </view>
+      <view class="yiwen-introduce">
+        <view class="xijie-introduce-title">{{ yiwen.name }}</view>
+        <view class="yiwen-introduce-text">
+          <view wx:for="{{ yiwen.introduce }}" wx:key="navIndex" wx:for-item="navTextItem" class="yiwen-introduce-item">
+            {{ navTextItem }}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="home zouyue" style="display:{{ script.getDisplayVal(pageType, 'zouyue') }}">
+    <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE.png" class="home-close" bindtap="getHome" data-key="zouyue"></image>
+    <view class="home-center">
+      <view class="zouyue-top">
+        <view class="zouyue-top-img">
+          <image src="{{ zouyueItem.src }}"></image>
+        </view>
+        <view class="zouyue-introduce">
+          <view class="zouyue-introduce-title">{{ zouyue.name }}</view>
+          <view class="zouyue-introduce-text">{{ zouyue.introduce }}</view>
+        </view>
+      </view>
+      <view class="zouyue-video">
+        <video controls="true" id="video" src="{{ zouyueItem.video }}" bindplay="onVideoPlay" object-fit="cover" poster="{{ zouyueItem.src }}"></video>
+      </view>
+      <view class="zouyue-nav">
+        <view wx:for="{{ zouyue.list }}" wx:key="navIndex" wx:for-item="navItem" class="zouyue-item" bindtap="zouyueGetItemShow" data-item="{{ navItem }}">
+          <view class="zouyue-item-box {{ navItem.key === zouyueFlag ? 'zouyue-item-curr' : '' }}">
+            <view class="zouyue-item-title">{{ zouyue.enum[navItem.key].name }}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="home niuzhong" style="display:{{ script.getDisplayVal(pageType, 'niuzhong') }}">
+    <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE.png" class="home-close" bindtap="getHome" data-key="niuzhong"></image>
+    <view class="home-center">
+      <view class="niuzhong-top">
+        <view wx:for="{{ niuzhong.list }}" wx:key="navIndex" wx:for-item="navItem" class="niuzhong-item {{ navItem.className }} {{ niuzhongImgIndex === navItem.id ? 'niuzhong-item-animation' : '' }}" bindtap="niuzhongGetImgIndex" data-item="{{ navItem }}">
+          <image src="{{ navItem.src }}"></image>
+        </view>
+        <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/3%E9%92%AE%E9%92%9F%E9%A1%B5_%E9%92%9F%E6%9E%B6.png" class="niuzhong-top-bg"></image>
+      </view>
+      <view class="niuzhong-introduce">
+        <view class="zouyue-introduce-title">{{ niuzhong.name }}</view>
+        <view class="niuzhong-introduce-box">
+          <view wx:for="{{ niuzhong.introduce }}" wx:key="navIndex" wx:for-item="navItem" class="niuzhong-introduce-item">
+            <view class="niuzhong-introduce-title">{{ navItem.title }}：</view>
+            <view class="niuzhong-introduce-text">
+              <view wx:for="{{ navItem.text }}" wx:key="navIndex" wx:for-item="navTextItem" class="niuzhong-introduce-text-item">
+                {{ navTextItem }}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="home yongzhong" style="display:{{ script.getDisplayVal(pageType, 'yongzhong') }}">
+    <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE.png" class="home-close" bindtap="getHome" data-key="yongzhong"></image>
+    <view class="home-center">
+      <view class="yongzhong-nav">
+        <view wx:for="{{ yongzhong.list }}" wx:key="navIndex" wx:for-item="navItem" class="yongzhong-item" style="top:{{ navItem.top + 'rpx' }};left:{{ navItem.left + 'rpx' }};">
+          <view class="yongzhong-item-box" bindtap="yongzhongGetItemShow" data-item="{{ navItem }}">
+            <view class="yongzhong-item-title">{{ navItem.name }}</view>
+          </view>
+          <view class="yongzhong-item-introduce" wx-if="{{ navItem.show }}" style="top:{{ navItem.introduceTop + 'rpx' }};left:{{ navItem.introduceLeft + 'rpx' }};width:{{ navItem.introduceWidth + 'rpx' }};">
+            <view class="yongzhong-item-introduce-title">“{{ navItem.name }}”</view>
+            <view class="yongzhong-item-introduce-text">{{ navItem.introduce }}</view>
+          </view>
+        </view>
+        <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/7%E7%94%AC%E9%92%9F%E9%A1%B5_%E7%BA%BF%E9%92%9F.png" class="yongzhong-nav-bg"></image>
+      </view>
+      <view class="xijie-introduce">
+        <view class="xijie-introduce-title">{{ yongzhong.name }}</view>
+        <view class="zouyue-introduce-size">
+          <view class="zouyue-introduce-size-title">结构：</view>
+          <view class="zouyue-introduce-size-text">{{ bozhong.introduce }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="home bozhong" style="display:{{ script.getDisplayVal(pageType, 'bozhong') }}">
+    <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE.png" class="home-close" bindtap="getHome" data-key="bozhong"></image>
+    <view class="home-center">
+      <view class="zouyue-top">
+        <view class="bozhong-top-img">
+          <image src="{{ bozhong.src }}"></image>
+        </view>
+        <view class="zouyue-introduce bozhong-introduce">
+          <view class="zouyue-introduce-title">{{ bozhong.name }}</view>
+          <view class="zouyue-introduce-size">
+            <view class="zouyue-introduce-size-title">尺寸：</view>
+            <view class="zouyue-introduce-size-text">{{ bozhong.sizeText }}</view>
+          </view>
+          <view class="zouyue-introduce-text bozhong-introduce-text">{{ bozhong.introduce }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="home fenxiang" style="display:{{ script.getDisplayVal(pageType, 'fenxiang') }}">
+    <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE.png" class="home-close" bindtap="getHome" data-key="fenxiang"></image>
+    <view class="home-center">
+      <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/%E6%89%8B%E6%9C%BA%E7%89%88%E5%85%B3%E8%81%94%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg" class="fenxiang-img"></image>
+      <view class="fenxiang-text">更多精彩请查看手机版</view>
+    </view>
+  </view>
+
+  <image src="https://baikebcs.bdimg.com/baike-other/digital_museum/zenghouyi/resources/1%E5%AF%BC%E8%88%AA%E9%A1%B5_%E5%BA%95%E7%BA%B9.jpg" class="container-bg"></image>
+</view>

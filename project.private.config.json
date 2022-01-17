@@ -71,6 +71,24 @@
           "pathName": "pages/authorize/authorize",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "signature",
+          "pathName": "pages/signature/signature",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "zenghouyi",
+          "pathName": "pages/zenghouyi/zenghouyi",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "home",
+          "pathName": "pages/home/home",
+          "query": "",
+          "scene": null
         }
       ]
     }
